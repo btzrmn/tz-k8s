@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: tz-tpa-configmap
+  name: tz-ppa-configmap
   namespace: processor
 data:
   QUOTING: "false"
