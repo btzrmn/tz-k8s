@@ -33,7 +33,7 @@ spec:
           ports:
             - name: http
               protocol: TCP
-              containerPort: 5000
+              containerPort: 8080
           resources: {}
           envFrom:
             - configMapRef:
