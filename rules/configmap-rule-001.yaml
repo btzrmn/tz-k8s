@@ -20,7 +20,7 @@ data:
   TRANSACTION_HISTORY_DATABASE_PASSWORD: "Passw0rdDB2#25"
   CONFIG_DATABASE_URL: "http://arango.development.svc.cluster.local:8529"
   CONFIG_DATABASE_PASSWORD: "Passw0rdDB2#25"
-  LOGSTASH_LEVEL: "info"
+  LOGSTASH_LEVEL: "debug"
   APM_ACTIVE: "false"
   APM_URL: "http://apm:8200"
   APM_SECRET_TOKEN: ""
