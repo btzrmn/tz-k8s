@@ -6,7 +6,6 @@ metadata:
 data:
   QUOTING: "false"
   CACHE_TTL: "86400"
-  APM_SECRET_TOKEN: ""
   PRODUCER_STREAM: "RuleResponse001"
   CONSUMER_STREAM: "RuleRequest001"
   STREAM_SUBJECT: "RuleRequest001"
@@ -23,5 +22,8 @@ data:
   CONFIG_DATABASE_PASSWORD: "Passw0rdDB2#25"
   LOGSTASH_LEVEL: "info"
   APM_ACTIVE: "false"
+  APM_URL: "http://apm:8200"
+  APM_SECRET_TOKEN: ""
+  APM_SERVICE_NAME: "rule-001"
   RULE_NAME: "001"
   FUNCTION_NAME: "rule-001"
