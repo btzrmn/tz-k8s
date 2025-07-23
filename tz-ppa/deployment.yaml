@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: batch-ppa-rel-1-0-0
-          image: docker.io/batzorig825/batch-ppa-dev:1.0.0
+          image: docker.io/batzorig825/batch-ppa-rel-1-0-0:1.0.0
           ports:
             - name: http
               containerPort: 3000
