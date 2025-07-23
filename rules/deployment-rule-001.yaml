@@ -27,6 +27,9 @@ spec:
               containerPort: 8080
               protocol: TCP
           resources: {}
+          envFrom:
+            - configMapRef:
+                name: rule-001-configmap
           imagePullPolicy: Always
         - name: rule-001-sidecar-rel-1-0-0
           image: docker.io/batzorig825/sidecar-rel-1-0-0:1.0.0
