@@ -1,0 +1,49 @@
+# SPDX-License-Identifier: Apache-2.0
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tz-service
+  namespace: processor
+  labels:
+    app: tz-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tz-service
+  template:
+    metadata:
+      name: tz-service
+      labels:
+        app: tz-service
+      annotations:
+        prometheus.io.scrape: 'false'
+    spec:
+      containers:
+        - name: tz-service
+          image: docker.io/batzorig825/tz-service-dev:1.0.0
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          resources: {}
+          envFrom:
+            - configMapRef:
+                name: tz-service-configmap
+          imagePullPolicy: Always
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      imagePullSecrets:
+        - name: frmpullsecret
+      schedulerName: default-scheduler
+      enableServiceLinks: false
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
