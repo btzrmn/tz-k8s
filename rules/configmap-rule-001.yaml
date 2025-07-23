@@ -21,7 +21,7 @@ data:
   CONFIG_DATABASE_URL: "http://arango.development.svc.cluster.local:8529"
   CONFIG_DATABASE_PASSWORD: "Passw0rdDB2#25"
   LOGSTASH_LEVEL: "info"
-  APM_ACTIVE: false
+  APM_ACTIVE: "false"
   APM_URL: "http://apm:8200"
   APM_SECRET_TOKEN: ""
   APM_SERVICE_NAME: "rule-001"
