@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: rule-001
-          image: tazamaorg/rule-001:2.1.0
+          image: batzorig825/rule-001-rel-1-0-0-dev:1.0.0
           ports:
             - name: http
               containerPort: 8080
