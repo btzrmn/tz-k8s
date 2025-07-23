@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rule-001
+  name: rule-001-rel-1-0-0
   namespace: processor
   labels:
     app: rule-001
@@ -13,31 +13,28 @@ spec:
       app: rule-001
   template:
     metadata:
-      name: rule-001
+      name: rule-001-rel-1-0-0
       labels:
         app: rule-001
       annotations:
         prometheus.io.scrape: 'false'
     spec:
       containers:
-        - name: rule-001
-          image: batzorig825/rule-001-rel-1-0-0-dev:1.0.0
+        - name: rule-001-rel-1-0-0
+          image: docker.io/batzorig825/rule-001-rel-1-0-0-dev:1.0.0
           ports:
             - name: http
               containerPort: 8080
               protocol: TCP
           resources: {}
           imagePullPolicy: Always
-        - name: rule-001-sidecar
-          image: batzorig825/sidecar-rel-1-0-0:1.0.0
+        - name: rule-001-sidecar-rel-1-0-0
+          image: docker.io/batzorig825/sidecar-rel-1-0-0:1.0.0
           ports:
             - name: http
               protocol: TCP
               containerPort: 5000
           resources: {}
-          envFrom:
-            - configMapRef:
-                name: rule-001-configmap
           imagePullPolicy: Always
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
