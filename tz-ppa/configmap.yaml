@@ -21,7 +21,7 @@ data:
   APM_ACTIVE: "false"
   REDIS_DATABASE: "0"
   REDIS_AUTH: ""
-  REDIS_SERVERS: '[{"host": "valkey-cluster-headless.development.svc.cluster.local", "port":6379}]'
+  REDIS_SERVERS: '[{"host": "valkey-cluster.development.svc.cluster.local", "port":6379}]'
   REDIS_IS_CLUSTER: "true"
   DISTRIBUTED_CACHETTL: "300"
   DISTRIBUTED_CACHE_ENABLED: "true"
