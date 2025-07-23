@@ -1,0 +1,49 @@
+# SPDX-License-Identifier: Apache-2.0
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: batch-tpa
+  namespace: processor
+  labels:
+    app: batch-tpa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: batch-tpa
+  template:
+    metadata:
+      name: batch-tpa
+      labels:
+        app: batch-tpa
+      annotations:
+        prometheus.io.scrape: 'false'
+    spec:
+      containers:
+        - name: batch-tpa
+          image: batzorig825/batch-tpa-dev:1.0.0
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          resources: {}
+          envFrom:
+            - configMapRef:
+                name: tz-tpa-configmap
+          imagePullPolicy: Always
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      imagePullSecrets:
+        - name: frmpullsecret
+      schedulerName: default-scheduler
+      enableServiceLinks: false
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600

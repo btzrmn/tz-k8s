@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tz-tpa-configmap
+  namespace: processor
+data:
+  PORT: "3000"
+  DB_URL: "tcp://arango.development.svc.cluster.local:8529"
+  DB_NAME_HIST: "transactionHistory"
+  DB_NAME_REPORT: "report"
+  DB_USER: "root"
+  DB_PASSWORD: "Passw0rdDB2#25"
