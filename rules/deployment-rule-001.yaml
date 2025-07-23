@@ -28,7 +28,7 @@ spec:
               protocol: TCP
           resources: {}
           imagePullPolicy: Always
-        - name: rule-001
+        - name: rule-001-sidecar
           image: batzorig825/sidecar-rel-1-0-0:1.0.0
           ports:
             - name: http
