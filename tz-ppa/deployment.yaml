@@ -1,0 +1,46 @@
+# SPDX-License-Identifier: Apache-2.0
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: batch-ppa
+  namespace: processor
+  labels:
+    app: batch-ppa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: batch-ppa
+  template:
+    metadata:
+      name: batch-ppa-rel-1-0-0
+      labels:
+        app: batch-ppa
+      annotations:
+        prometheus.io.scrape: 'false'
+    spec:
+      containers:
+        - name: batch-ppa-rel-1-0-0
+          image: docker.io/batzorig825/batch-ppa-dev:1.0.0
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          resources: {}
+          imagePullPolicy: Always
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      imagePullSecrets:
+        - name: frmpullsecret
+      schedulerName: default-scheduler
+      enableServiceLinks: false
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600

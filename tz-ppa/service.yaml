@@ -3,16 +3,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: batch-tpa
+  name: batch-ppa-rel-1-0-0
   namespace: processor
 spec:
   ports:
     - name: http
       protocol: TCP
       port: 3000
-      nodePort: 30002
+      nodePort: 30001
   selector:
-    app: batch-tpa
+    app: batch-ppa
   type: NodePort
   sessionAffinity: None
   ipFamilies:
