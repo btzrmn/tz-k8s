@@ -30,7 +30,7 @@ spec:
           resources: {}
           envFrom:
             - configMapRef:
-                name: tz-ppa-configmap
+              name: tz-ppa-configmap
           imagePullPolicy: Always
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
