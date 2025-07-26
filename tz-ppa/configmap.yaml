@@ -10,7 +10,7 @@ data:
 
   # Batch-PPA
   TMS_ENDPOINT: "http://168.138.184.62:5000"
-  QUOTING: "true"
+  QUOTING: "false"
   PORT: "3000"
   MAX_FILE_SIZE: "100" #mb
   DELIMITER: "|"
