@@ -4,23 +4,45 @@ metadata:
   name: tz-ppa-configmap
   namespace: processor
 data:
-  QUOTING: "false"
-  CACHE_TTL: "86400"
-  SERVER_URL: "nats.development.svc.cluster.local:4222"
-  STARTUP_TYPE: "nats"
-  PSEUDONYMS_DATABASE_URL: "tcp://arango.development.svc.cluster.local:8529"
-  PSEUDONYMS_DATABASE_USER: "root"
-  PSEUDONYMS_DATABASE_CERT_PATH: ""
-  TRANSACTION_HISTORY_DATABASE_URL: "tcp://arango.development.svc.cluster.local:8529"
-  TRANSACTION_HISTORY_DATABASE_USER: "root"
-  TRANSACTION_HISTORY_DATABASE_CERT_PATH: ""
-  LOGSTASH_LEVEL: "debug"
-  APM_SECRET_TOKEN: ""
-  APM_ACTIVE: "false"
+  FUNCTION_NAME: "batch-ppa"
+  NODE_ENV: "production"
+  MAX_CPU: "1"
+
+  # Batch-PPA
+  TMS_ENDPOINT: "http://168.138.184.62:5000"
+  QUOTING: "true"
+  PORT: "3000"
+  MAX_FILE_SIZE: "100" #mb
+  DELIMITER: "|"
+
+  # REDIS
   REDIS_DATABASE: "0"
-  REDIS_AUTH: ""
-  REDIS_SERVERS: '[{"host": "168.138.184.62", "port":16379}]'
-  REDIS_IS_CLUSTER: "true"
+  REDIS_AUTH: "exampleAuth"
+  REDIS_SERVERS: '[{"host":"168.138.184.62", "port":16379}]'
+  REDIS_IS_CLUSTER: "false"
   DISTRIBUTED_CACHETTL: "300"
   DISTRIBUTED_CACHE_ENABLED: "true"
-  TMS_ENDPOINT: http://tms:3000
+
+  # ArangoDB
+  PSEUDONYMS_DATABASE: "pseudonyms"
+  PSEUDONYMS_DATABASE_URL: "tcp://168.138.184.62:30529"
+  PSEUDONYMS_DATABASE_USER: "root"
+  PSEUDONYMS_DATABASE_PASSWORD: "Passw0rdDB2#25"
+  PSEUDONYMS_DATABASE_CERT_PATH: ""
+
+  TRANSACTION_HISTORY_DATABASE: "transactionHistory"
+  TRANSACTION_HISTORY_DATABASE_URL: "tcp://168.138.184.62:30529"
+  TRANSACTION_HISTORY_DATABASE_USER: "root"
+  TRANSACTION_HISTORY_DATABASE_PASSWORD: "Passw0rdDB2#25"
+  TRANSACTION_HISTORY_DATABASE_CERT_PATH: ""
+
+  # ELASTIC APM
+  APM_ACTIVE: "false"
+  APM_SERVICE_NAME: "batch-ppa"
+  APM_URL: "http://apm:8200"
+  APM_SECRET_TOKEN: ""
+
+  # LOGGING
+  LOGSTASH_HOST: "logstashhost"
+  LOGSTASH_PORT: "8080"
+  LOGSTASH_LEVEL: "info"
