@@ -31,6 +31,17 @@ spec:
           envFrom:
             - configMapRef:
                 name: tz-ppa-configmap
+          env:
+            - name: PSEUDONYMS_DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: mysql-password
+            - name: TRANSACTION_HISTORY_DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: mysql-password
           imagePullPolicy: Always
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
