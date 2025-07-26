@@ -35,13 +35,13 @@ spec:
             - name: PSEUDONYMS_DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: mysql-secret
-                  key: mysql-password
+                  name: arango-secret
+                  key: arango-password
             - name: TRANSACTION_HISTORY_DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: mysql-secret
-                  key: mysql-password
+                  name: arango-secret
+                  key: arango-password
           imagePullPolicy: Always
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
