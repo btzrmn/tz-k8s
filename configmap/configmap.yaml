@@ -58,3 +58,7 @@ data:
   DELIMITER: "|"
 
   TRANSACTION_URL: "http://168.138.184.62:30002"
+
+  CACHE_TTL: "86400"
+  SERVER_URL: "nats.development.svc.cluster.local:4222"
+  STARTUP_TYPE: "nats"
