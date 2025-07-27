@@ -37,7 +37,12 @@ spec:
           resources: {}
           envFrom:
             - configMapRef:
-                name: tz-tms-configmap
+                name: tz-configmap
+          env:
+            - name: FUNCTION_NAME
+              value: "transaction-monitoring-service"
+            - name: MAX_CPU
+              value: "1"
           imagePullPolicy: Always
       restartPolicy: Always
       terminationGracePeriodSeconds: 30

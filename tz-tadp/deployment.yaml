@@ -1,37 +1,43 @@
 # SPDX-License-Identifier: Apache-2.0
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: batch-ppa
+  name: transaction-aggregation-decisioning-processor-rel-1-0-0
   namespace: processor
   labels:
-    app: batch-ppa
+    app: transaction-aggregation-decisioning-processor
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: batch-ppa
+      app: transaction-aggregation-decisioning-processor
   template:
     metadata:
-      name: batch-ppa-rel-1-0-0
+      name: transaction-aggregation-decisioning-processor-rel-1-0-0
       labels:
-        app: batch-ppa
+        app: transaction-aggregation-decisioning-processor
       annotations:
         prometheus.io.scrape: 'false'
     spec:
       containers:
-        - name: batch-ppa-rel-1-0-0
-          image: batzorig825/batch-ppa-rel-1-0-0-dev:1.0.0
+        - name: transaction-aggregation-decisioning-processor-rel-1-0-0
+          image: docker.io/batzorig825/transaction-aggregation-decisioning-processor-rel-1-0-0-dev:1.0.0
           ports:
             - name: http
-              containerPort: 3000
+              containerPort: 8080
               protocol: TCP
+          resources: {}
+          imagePullPolicy: Always
+        - name: tadp-sidecar-rel-1-0-0
+          image: docker.io/batzorig825/sidecar-rel-1-0-0:1.0.0
+          ports:
+            - name: http
+              protocol: TCP
+              containerPort: 5000
           resources: {}
           envFrom:
             - configMapRef:
                 name: tz-configmap
-          env:
             - name: FUNCTION_NAME
               value: "batch-ppa"
             - name: MAX_CPU

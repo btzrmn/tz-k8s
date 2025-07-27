@@ -1,19 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: tz-ppa-configmap
+  name: tz-configmap
   namespace: processor
 data:
-  FUNCTION_NAME: "batch-ppa"
   NODE_ENV: "production"
-  MAX_CPU: "1"
-
-  # Batch-PPA
-  TMS_ENDPOINT: "http://168.138.184.62:5000"
-  QUOTING: "false"
-  PORT: "3000"
-  MAX_FILE_SIZE: "100" #mb
-  DELIMITER: "|"
 
   # REDIS
   REDIS_DATABASE: "0"
@@ -36,13 +27,34 @@ data:
   TRANSACTION_HISTORY_DATABASE_PASSWORD: "Passw0rdDB2#25"
   TRANSACTION_HISTORY_DATABASE_CERT_PATH: ""
 
+  CONFIGURATION_DATABASE_URL: "tcp://arango.development.svc.cluster.local:8529"
+  CONFIGURATION_DATABASE_USER: "root"
+  CONFIGURATION_DATABASE_PASSWORD: "Passw0rdDB2#25"
+  CONFIGURATION_DATABASE: "configuration"
+  CONFIGURATION_DATABASE_CERT_PATH: ""
+
+  EVALUATION_DATABASE_URL: "tcp://arango.development.svc.cluster.local:8529"
+  EVALUATION_DATABASE_USER: "root"
+  EVALUATION_DATABASE_PASSWORD: "Passw0rdDB2#25"
+  EVALUATION_DATABASE: "evaluationResults"
+  EVALUATION_DATABASE_CERT_PATH: ""
+
   # ELASTIC APM
   APM_ACTIVE: "false"
-  APM_SERVICE_NAME: "batch-ppa"
-  APM_URL: "http://apm:8200"
+  APM_SERVICE_NAME: "apm"
+  APM_URL: "http://apm-server.development.svc.cluster.local:8200/"
   APM_SECRET_TOKEN: ""
 
   # LOGGING
   LOGSTASH_HOST: "logstashhost"
   LOGSTASH_PORT: "8080"
   LOGSTASH_LEVEL: "info"
+
+  # Batch-PPA
+  TMS_ENDPOINT: "http://168.138.184.62:5000"
+  QUOTING: "false"
+  PORT: "3000"
+  MAX_FILE_SIZE: "100" #mb
+  DELIMITER: "|"
+
+  TRANSACTION_URL: "http://168.138.184.62:30002"
