@@ -38,6 +38,7 @@ spec:
           envFrom:
             - configMapRef:
                 name: tz-configmap
+          env:
             - name: FUNCTION_NAME
               value: "typology-processor"
             - name: MAX_CPU
