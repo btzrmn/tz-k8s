@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: rule-001-rel-1-0-0
-          image: docker.io/batzorig825/rule-001-rel-1-0-0-dev:1.0.0
+          image: tazamaorg/rule-001:2.1.0
           ports:
             - name: http
               containerPort: 8080
@@ -29,7 +29,16 @@ spec:
           resources: {}
           envFrom:
             - configMapRef:
-                name: rule-001-configmap
+                name: tz-configmap
+          env:
+            - name: FUNCTION_NAME
+              value: "rule-001-rel-1-0-0"
+            - name: RULE_NAME
+              value: "001"
+            - name: APM_SERVICE_NAME
+              value: "rule-001"
+            - name: MAX_CPU
+              value: "1"
           imagePullPolicy: Always
         - name: rule-001-sidecar-rel-1-0-0
           image: docker.io/batzorig825/sidecar-rel-1-0-0:1.0.0
