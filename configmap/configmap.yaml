@@ -62,3 +62,7 @@ data:
   CACHE_TTL: "86400"
   SERVER_URL: "nats.development.svc.cluster.local:4222"
   STARTUP_TYPE: "nats"
+  SIDECAR_HOST: ""
+
+  LOCAL_CACHETTL: "300"
+  LOCAL_CACHE_ENABLED: "false"
