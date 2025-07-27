@@ -33,7 +33,7 @@ spec:
           env:
             - name: FUNCTION_NAME
               value: "transaction-aggregation-decisioning-processor"
-            - name: CONSUMER_STREAM
+            - name: PRODUCER_STREAM
               value: "cms"
             - name: SUPPRESS_ALERTS
               value: "true"
