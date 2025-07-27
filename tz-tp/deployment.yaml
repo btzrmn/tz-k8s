@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: typology-processor-rel-1-0-0
-          image: batzorig825/tz-tp:dev
+          image: docker.io/batzorig825/tz-tp:dev
           ports:
             - name: http
               containerPort: 8080
