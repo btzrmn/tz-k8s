@@ -43,6 +43,10 @@ spec:
               value: "transaction-monitoring-service"
             - name: MAX_CPU
               value: "1"
+            - namne: PRODUCER_STREAM
+              value: "event-director"
+            - namne: CONSUMER_STREAM
+              value: ""
           imagePullPolicy: Always
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
