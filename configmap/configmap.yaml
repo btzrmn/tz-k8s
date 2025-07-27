@@ -51,7 +51,7 @@ data:
   LOGSTASH_LEVEL: "info"
 
   # Batch-PPA
-  TMS_ENDPOINT: "http://transaction-monitoring-service-rel-1-0-0.processor.svc.cluster.local:5000"
+  TMS_ENDPOINT: "http://transaction-monitoring-service-rel-1-0-0.processor.svc.cluster.local:3000"
   QUOTING: "false"
   PORT: "3000"
   MAX_FILE_SIZE: "100" #mb
