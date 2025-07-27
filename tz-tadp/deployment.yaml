@@ -27,6 +27,14 @@ spec:
               containerPort: 8080
               protocol: TCP
           resources: {}
+          envFrom:
+            - configMapRef:
+                name: tz-configmap
+          env:
+            - name: FUNCTION_NAME
+              value: "transaction-aggregation-decisioning-processor"
+            - name: MAX_CPU
+              value: "1"
           imagePullPolicy: Always
         - name: tadp-sidecar-rel-1-0-0
           image: docker.io/batzorig825/sidecar-rel-1-0-0:1.0.0
@@ -35,14 +43,9 @@ spec:
               protocol: TCP
               containerPort: 5000
           resources: {}
-          envFrom:
-            - configMapRef:
-                name: tz-configmap
           env:
-            - name: FUNCTION_NAME
-              value: "batch-ppa"
-            - name: MAX_CPU
-              value: "1"
+            - name: NATS_SERVER
+              value: "nats.development.svc.cluster.local:4222"
           imagePullPolicy: Always
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
