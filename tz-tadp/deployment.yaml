@@ -33,6 +33,10 @@ spec:
           env:
             - name: FUNCTION_NAME
               value: "transaction-aggregation-decisioning-processor"
+            - name: CONSUMER_STREAM
+              value: "cms"
+            - name: SUPPRESS_ALERTS
+              value: "true"
             - name: MAX_CPU
               value: "1"
           imagePullPolicy: Always
