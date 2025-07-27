@@ -1,20 +1,72 @@
-#!/bin/bash
-
-# Эх файл
-SOURCE_FILE="service-rule-001.yaml"
-
-# Орлуулах ID-ууд
-IDS=(002 003 004 005 006 007 008 009 010 011 016 017 018 020 021 024 025 026 027 028 030 044 045 048 054 063 074 075 076 078 083 084 090 091)
-
-# Хэрвээ эх файл байхгүй бол гарах
-if [ ! -f "$SOURCE_FILE" ]; then
-  echo "Файл олдсонгүй: $SOURCE_FILE"
-  exit 1
-fi
-
-# Давталтаар шинэ файлууд үүсгэх
-for id in "${IDS[@]}"; do
-  NEW_FILE="service-rule-$id.yaml"
-  sed "s/rule-001/rule-$id/g" "$SOURCE_FILE" > "$NEW_FILE"
-  echo "Үүсгэлээ: $NEW_FILE"
-done
+wait
+kubectl delete -f deployment-rule-001.yaml
+kubectl delete -f deployment-rule-002.yaml
+kubectl delete -f deployment-rule-003.yaml
+kubectl delete -f deployment-rule-004.yaml
+kubectl delete -f deployment-rule-005.yaml
+kubectl delete -f deployment-rule-006.yaml
+kubectl delete -f deployment-rule-007.yaml
+kubectl delete -f deployment-rule-008.yaml
+kubectl delete -f deployment-rule-009.yaml
+kubectl delete -f deployment-rule-010.yaml
+kubectl delete -f deployment-rule-011.yaml
+kubectl delete -f deployment-rule-016.yaml
+kubectl delete -f deployment-rule-017.yaml
+kubectl delete -f deployment-rule-018.yaml
+kubectl delete -f deployment-rule-020.yaml
+kubectl delete -f deployment-rule-021.yaml
+kubectl delete -f deployment-rule-024.yaml
+kubectl delete -f deployment-rule-025.yaml
+kubectl delete -f deployment-rule-026.yaml
+kubectl delete -f deployment-rule-027.yaml
+kubectl delete -f deployment-rule-028.yaml
+kubectl delete -f deployment-rule-030.yaml
+kubectl delete -f deployment-rule-044.yaml
+kubectl delete -f deployment-rule-045.yaml
+kubectl delete -f deployment-rule-048.yaml
+kubectl delete -f deployment-rule-054.yaml
+kubectl delete -f deployment-rule-063.yaml
+kubectl delete -f deployment-rule-074.yaml
+kubectl delete -f deployment-rule-075.yaml
+kubectl delete -f deployment-rule-076.yaml
+kubectl delete -f deployment-rule-078.yaml
+kubectl delete -f deployment-rule-083.yaml
+kubectl delete -f deployment-rule-084.yaml
+kubectl delete -f deployment-rule-090.yaml
+kubectl delete -f deployment-rule-091.yaml
+wait
+kubectl delete -f service-rule-001.yaml
+kubectl delete -f service-rule-002.yaml
+kubectl delete -f service-rule-003.yaml
+kubectl delete -f service-rule-004.yaml
+kubectl delete -f service-rule-005.yaml
+kubectl delete -f service-rule-006.yaml
+kubectl delete -f service-rule-007.yaml
+kubectl delete -f service-rule-008.yaml
+kubectl delete -f service-rule-009.yaml
+kubectl delete -f service-rule-010.yaml
+kubectl delete -f service-rule-011.yaml
+kubectl delete -f service-rule-016.yaml
+kubectl delete -f service-rule-017.yaml
+kubectl delete -f service-rule-018.yaml
+kubectl delete -f service-rule-020.yaml
+kubectl delete -f service-rule-021.yaml
+kubectl delete -f service-rule-024.yaml
+kubectl delete -f service-rule-025.yaml
+kubectl delete -f service-rule-026.yaml
+kubectl delete -f service-rule-027.yaml
+kubectl delete -f service-rule-028.yaml
+kubectl delete -f service-rule-030.yaml
+kubectl delete -f service-rule-044.yaml
+kubectl delete -f service-rule-045.yaml
+kubectl delete -f service-rule-048.yaml
+kubectl delete -f service-rule-054.yaml
+kubectl delete -f service-rule-063.yaml
+kubectl delete -f service-rule-074.yaml
+kubectl delete -f service-rule-075.yaml
+kubectl delete -f service-rule-076.yaml
+kubectl delete -f service-rule-078.yaml
+kubectl delete -f service-rule-083.yaml
+kubectl delete -f service-rule-084.yaml
+kubectl delete -f service-rule-090.yaml
+kubectl delete -f service-rule-091.yaml
