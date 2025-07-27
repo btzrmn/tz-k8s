@@ -27,14 +27,6 @@ spec:
               protocol: TCP
               containerPort: 3000
           resources: {}
-          imagePullPolicy: Always
-        - name: tms-sidecar-rel-1-0-0
-          image: docker.io/batzorig825/sidecar-rel-1-0-0:1.0.0
-          ports:
-            - name: http
-              protocol: TCP
-              containerPort: 5000
-          resources: {}
           envFrom:
             - configMapRef:
                 name: tz-configmap
@@ -47,6 +39,17 @@ spec:
               value: "event-director"
             - name: CONSUMER_STREAM
               value: ""
+          imagePullPolicy: Always
+        - name: tms-sidecar-rel-1-0-0
+          image: docker.io/batzorig825/sidecar-rel-1-0-0:1.0.0
+          ports:
+            - name: http
+              protocol: TCP
+              containerPort: 5000
+          resources: {}
+          env:
+            - name: NATS_SERVER
+              value: "nats.development.svc.cluster.local:4222"
           imagePullPolicy: Always
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
