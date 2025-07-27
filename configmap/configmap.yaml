@@ -8,9 +8,9 @@ data:
 
   # REDIS
   REDIS_DATABASE: "0"
-  REDIS_AUTH: "y0KNqmwTGA"
-  REDIS_SERVERS: '[{"host":"valkey-cluster.development.svc.cluster.local", "port":6379}]'
-  REDIS_IS_CLUSTER: "true"
+  REDIS_AUTH: "Red!$P@ssw0rd"
+  REDIS_SERVERS: '[{"host":"redis-svc.development.svc.cluster.local", "port":6379}]'
+  REDIS_IS_CLUSTER: "false"
   DISTRIBUTED_CACHETTL: "300"
   DISTRIBUTED_CACHE_ENABLED: "true"
 
