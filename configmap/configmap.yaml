@@ -4,7 +4,7 @@ metadata:
   name: tz-configmap
   namespace: processor
 data:
-  NODE_ENV: "production"
+  NODE_ENV: "dev"
 
   # REDIS
   REDIS_DATABASE: "0"
