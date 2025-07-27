@@ -9,7 +9,7 @@ data:
   # REDIS
   REDIS_DATABASE: "0"
   REDIS_AUTH: "Red!$P@ssw0rd"
-  REDIS_SERVERS: '[{"host":"redis-svc.development.svc.cluster.local", "port":6379}]'
+  REDIS_SERVERS: '[{"host":"redis-svc.processor.svc.cluster.local", "port":6379}]'
   REDIS_IS_CLUSTER: "false"
   DISTRIBUTED_CACHETTL: "300"
   DISTRIBUTED_CACHE_ENABLED: "true"
