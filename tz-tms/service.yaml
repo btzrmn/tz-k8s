@@ -9,14 +9,14 @@ spec:
     - name: http
       protocol: TCP
       port: 3000
-      nodePort: 30030
+      targetPort: 3000
     - name: sidecar
       protocol: TCP
       port: 5000
-      nodePort: 30050
+      targetPort: 5000
   selector:
     app: transaction-monitoring-service
-  type: NodePort
+  type: ClusterIP
   sessionAffinity: None
   ipFamilies:
     - IPv4
