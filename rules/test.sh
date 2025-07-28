@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Эх файл
-SOURCE_FILE="deployment-rule-001.yaml"
+SOURCE_FILE="service-rule-001.yaml"
 
 # Орлуулах ID-ууд
 IDS=(002 003 004 006 007 008 010 011 016 017 018 020 021 024 025 026 027 028 030 044 045 048 054 063 074 075 076 078 083 084 090 091)
@@ -14,7 +14,7 @@ fi
 
 # Давталтаар шинэ файлууд үүсгэх
 for id in "${IDS[@]}"; do
-  NEW_FILE="deployment-rule-$id.yaml"
+  NEW_FILE="service-rule-$id.yaml"
   sed "s/001/rule-$id/g" "$SOURCE_FILE" > "$NEW_FILE"
   echo "Үүсгэлээ: $NEW_FILE"
 done
