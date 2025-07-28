@@ -3,11 +3,9 @@ kubectl delete -f deployment-rule-001.yaml
 kubectl delete -f deployment-rule-002.yaml
 kubectl delete -f deployment-rule-003.yaml
 kubectl delete -f deployment-rule-004.yaml
-kubectl delete -f deployment-rule-005.yaml
 kubectl delete -f deployment-rule-006.yaml
 kubectl delete -f deployment-rule-007.yaml
 kubectl delete -f deployment-rule-008.yaml
-kubectl delete -f deployment-rule-009.yaml
 kubectl delete -f deployment-rule-010.yaml
 kubectl delete -f deployment-rule-011.yaml
 kubectl delete -f deployment-rule-016.yaml
@@ -39,11 +37,9 @@ kubectl delete -f service-rule-001.yaml
 kubectl delete -f service-rule-002.yaml
 kubectl delete -f service-rule-003.yaml
 kubectl delete -f service-rule-004.yaml
-kubectl delete -f service-rule-005.yaml
 kubectl delete -f service-rule-006.yaml
 kubectl delete -f service-rule-007.yaml
 kubectl delete -f service-rule-008.yaml
-kubectl delete -f service-rule-009.yaml
 kubectl delete -f service-rule-010.yaml
 kubectl delete -f service-rule-011.yaml
 kubectl delete -f service-rule-016.yaml
@@ -75,11 +71,9 @@ kubectl apply -f deployment-rule-001.yaml
 kubectl apply -f deployment-rule-002.yaml
 kubectl apply -f deployment-rule-003.yaml
 kubectl apply -f deployment-rule-004.yaml
-kubectl apply -f deployment-rule-005.yaml
 kubectl apply -f deployment-rule-006.yaml
 kubectl apply -f deployment-rule-007.yaml
 kubectl apply -f deployment-rule-008.yaml
-kubectl apply -f deployment-rule-009.yaml
 kubectl apply -f deployment-rule-010.yaml
 kubectl apply -f deployment-rule-011.yaml
 kubectl apply -f deployment-rule-016.yaml
@@ -111,11 +105,9 @@ kubectl apply -f service-rule-001.yaml
 kubectl apply -f service-rule-002.yaml
 kubectl apply -f service-rule-003.yaml
 kubectl apply -f service-rule-004.yaml
-kubectl apply -f service-rule-005.yaml
 kubectl apply -f service-rule-006.yaml
 kubectl apply -f service-rule-007.yaml
 kubectl apply -f service-rule-008.yaml
-kubectl apply -f service-rule-009.yaml
 kubectl apply -f service-rule-010.yaml
 kubectl apply -f service-rule-011.yaml
 kubectl apply -f service-rule-016.yaml
