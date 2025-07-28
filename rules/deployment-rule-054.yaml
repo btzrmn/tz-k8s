@@ -2,26 +2,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rule-rule-054-rel-1-0-0
+  name: rule-054-rel-1-0-0
   namespace: processor
   labels:
-    app: rule-rule-054
+    app: rule-054
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: rule-rule-054
+      app: rule-054
   template:
     metadata:
-      name: rule-rule-054-rel-1-0-0
+      name: rule-054-rel-1-0-0
       labels:
-        app: rule-rule-054
+        app: rule-054
       annotations:
         prometheus.io.scrape: 'false'
     spec:
       containers:
-        - name: rule-rule-054-rel-1-0-0
-          image: tazamaorg/rule-rule-054:2.1.0
+        - name: rule-054-rel-1-0-0
+          image: tazamaorg/rule-054:2.1.0
           ports:
             - name: http
               containerPort: 8080
@@ -32,11 +32,11 @@ spec:
                 name: tz-configmap
           env:
             - name: FUNCTION_NAME
-              value: "rule-rule-054-rel-1-0-0"
+              value: "rule-054-rel-1-0-0"
             - name: RULE_NAME
               value: "rule-054"
             - name: APM_SERVICE_NAME
-              value: "rule-rule-054"
+              value: "rule-054"
             - name: PRODUCER_STREAM
               value: "RuleResponserule-054"
             - name: CONSUMER_STREAM
@@ -46,7 +46,7 @@ spec:
             - name: MAX_CPU
               value: "1"
           imagePullPolicy: Always
-        - name: rule-rule-054-sidecar-rel-1-0-0
+        - name: rule-054-sidecar-rel-1-0-0
           image: docker.io/batzorig825/sidecar-rel-1-0-0:1.0.0
           ports:
             - name: http

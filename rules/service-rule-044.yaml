@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: rule-rule-044-rel-1-0-0
+  name: rule-044-rel-1-0-0
   namespace: processor
 spec:
   ports:
@@ -11,7 +11,7 @@ spec:
       port: 8080
       targetPort: 8080
   selector:
-    app: rule-rule-044
+    app: rule-044
   type: ClusterIP
   sessionAffinity: None
   ipFamilies:
