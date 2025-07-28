@@ -41,6 +41,8 @@ spec:
               value: "RuleResponse001"
             - name: CONSUMER_STREAM
               value: "RuleRequest001"
+            - name: RULE_VERSION
+              value: "1.0.0"
             - name: MAX_CPU
               value: "1"
           imagePullPolicy: Always
