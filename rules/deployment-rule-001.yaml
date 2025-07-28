@@ -37,6 +37,12 @@ spec:
               value: "001"
             - name: APM_SERVICE_NAME
               value: "rule-001"
+            - name: PRODUCER_STREAM
+              value: "RuleResponse001"
+            - name: CONSUMER_STREAM
+              value: "RuleRequest001"
+            - name: STREAM_SUBJECT
+              value: "RuleRequest001"
             - name: MAX_CPU
               value: "1"
           imagePullPolicy: Always
