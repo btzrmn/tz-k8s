@@ -5,11 +5,11 @@ metadata:
   namespace: processor
 data:
   APP_NAME: "Service"
-  KC_URL: "http://168.138.184.62:30980"
+  KC_URL: "http://10.12.14.30:30980"
   KC_REALM: "fraudblok"
   KC_CLIENTID: "internal"
   KC_SECRET: "tgP6dVh9ZI92Mfiu03XXbBa9ssbxlrZB"
-  DB_URL: "http://arango.development.svc.cluster.local:8529"
+  DB_URL: "http://10.12.14.30:18529"
   DB_USER: "root"
   DB_PASSWORD: "Passw0rdDB2#25"
   DB_TRANSACTION_NAME: "evaluationResults"
@@ -18,4 +18,4 @@ data:
   DB_PSEUDONYMS_NAME: "pseudonyms"
   DB_REPORT_NAME: "report"
   DB_LOG_NAME: "webappLogs"
-  ELASTICSEARCH_NODE: "http://elastic:PasSw0rd2o25@168.138.184.62:9200"
+  ELASTICSEARCH_NODE: "http://elastic:PasSw0rd2o25@10.12.14.30:9200"

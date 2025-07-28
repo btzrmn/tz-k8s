@@ -5,7 +5,7 @@ metadata:
   namespace: processor
 data:
   PORT: "3000"
-  DB_URL: "tcp://arango.development.svc.cluster.local:8529"
+  DB_URL: "tcp://10.12.14.30:18529"
   DB_NAME_HIST: "transactionHistory"
   DB_NAME_REPORT: "report"
   DB_USER: "root"
