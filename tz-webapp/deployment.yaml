@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: tz-webapp
-          image: docker.io/batzorig825/tz-webapp-dev:1.0.0
+          image: batzorig825/tz-webapp:dev
           ports:
             - name: http
               containerPort: 80

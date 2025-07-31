@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: batch-tpa
-          image: batzorig825/batch-tpa-dev:1.0.0
+          image: batzorig825/tz-tpa:dev
           ports:
             - name: http
               containerPort: 3000
