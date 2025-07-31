@@ -9,7 +9,7 @@ data:
   KC_REALM: "fraudblok"
   KC_CLIENTID: "internal"
   KC_SECRET: "tgP6dVh9ZI92Mfiu03XXbBa9ssbxlrZB"
-  DB_URL: "http://168.138.184.62:18529"
+  DB_URL: "http://168.138.184.62:30529"
   DB_USER: "root"
   DB_PASSWORD: "Passw0rdDB2#25"
   DB_TRANSACTION_NAME: "evaluationResults"
